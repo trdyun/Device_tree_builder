@@ -15,7 +15,7 @@ on:
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     
     steps:
     - name: Check Out
@@ -24,8 +24,7 @@ jobs:
     - name: Prepare the environment
       run: |
         sudo apt update
-        sudo apt-get upgrade
-        sudo apt -y install python2 python3 python-pip python3-pip cpio wget
+        sudo apt -y install python python3 python-pip python3-pip cpio wget
       
     - name: Set variables
       run: |
